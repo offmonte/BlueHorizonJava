@@ -1,0 +1,22 @@
+server:
+  port: 80
+spring:
+  thymeleaf:
+    check-template-location: false
+  profiles:
+    active: homologacao
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+  config:
+    import: optional:file:.env[.properties]
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    supported-submit-methods: { "get", "put", "post", "delete", "options", "head", "patch", "trace"}
+
+  api-docs:
+    enabled: true
